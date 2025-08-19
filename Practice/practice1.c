@@ -14,7 +14,7 @@ void main(){
 
     // Answer to #2 and #5
     charList L;
-    bool result
+    bool result;
 
     L.elem[0] =  'U';
     L.elem[1] =  'S';
