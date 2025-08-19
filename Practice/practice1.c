@@ -19,14 +19,11 @@ void main(){
     if(L.count > 1){
         result = findElem(L,'S');
 
-        if(result){
-            printf("The list is not empty and element X is in the list.");
-        } else{
-            printf("The list is not empty and element X is not in the list.");
-        }
-    } else{
-        printf("The list is empty.");
-    }
+        if(result) printf("The list is not empty and element X is in the list.");
+        else printf("The list is not empty and element X is not in the list.");
+
+    } else printf("The list is empty.");
+    
     
 }
 
