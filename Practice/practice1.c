@@ -4,7 +4,7 @@
 #define MAX 10
 
 typedef struct{
-    char elem[MAX-1];
+    char elem[MAX];
     int count;
 }charList;
 
