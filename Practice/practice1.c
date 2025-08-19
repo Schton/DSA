@@ -13,7 +13,7 @@ bool findElem(charList, char); // Answer to #1
 void main(){
 
     // Answer to #2 and #5
-    charList L = {{'U','S','C'},3};;
+    charList L = {{'U','S','C'},3};
     bool result;
 
     if(L.count > 1){
