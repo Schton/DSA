@@ -14,6 +14,7 @@ void main(){
 
     // Answer to #2 and #5
     charList L;
+    bool result
 
     L.elem[0] =  'U';
     L.elem[1] =  'S';
@@ -21,7 +22,7 @@ void main(){
     L.count = 3;
 
     if(L.count > 1){
-        bool result = findElem(L,'D');
+        result = findElem(L,'D');
 
         if(result){
             printf("The list is not empty and element X is in the list.");
