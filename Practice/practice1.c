@@ -13,16 +13,16 @@ bool findElem(charList, char); // Answer to #1
 void main(){
 
     // Answer to #2 and #5
-    charList L;
-    bool result
+    charList L = {{'U','S','C'},3};;
+    bool result;
 
-    L.elem[0] =  'U';
-    L.elem[1] =  'S';
-    L.elem[2] =  'C';
-    L.count = 3;
+    // L.elem[0] =  'U';
+    // L.elem[1] =  'S';
+    // L.elem[2] =  'C';
+    // L.count = 3;
 
     if(L.count > 1){
-        result = findElem(L,'D');
+        result = findElem(L,'S');
 
         if(result){
             printf("The list is not empty and element X is in the list.");
