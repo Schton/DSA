@@ -1,1 +1,23 @@
+is a conceptual model of a data structure based on operations
 
+TYPES:
+-encapsulation
+-abstraction
+
+IMPLEMENTATIONS:
+-array list
+-linked list
+-cursor based
+
+OPERATIONS:
+-insert
+-delete
+-read
+-update
+
+VARIATIONS:
+array list:
+-static, accessed by value
+-static, accessed by pointer
+-dynamic, accessed by value
+-dynamic, accessed by pointer
