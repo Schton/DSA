@@ -20,20 +20,15 @@ void main(){
 
     char x;
 
-    if(!head){
-        printf("The list is empty.");
-        
-    } else{
+    if(!head) printf("The list is empty.");
+    else{
         printf("Enter a letter: ");
         scanf("%c", &x);
 
         bool result = findElem(head,x);
 
-        if(result){
-            printf("The list is not empty and element X is in the list.");
-        } else{
-            printf("The list is not empty and element X is not in the list.");
-        }
+        if(result) printf("The list is not empty and element X is in the list.");
+        else printf("The list is not empty and element X is not in the list.");
     }
     
 }
@@ -44,9 +39,8 @@ void populate(charList* L, char x){
     temp->elem = x;
     temp->link = NULL;
 
-    if(*L == NULL){
-        *L = temp;
-    }else{
+    if(*L == NULL) *L = temp;
+    else{
         charList* trav = L;
 
         while((*trav)->link != NULL) {
