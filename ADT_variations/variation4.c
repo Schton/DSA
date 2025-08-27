@@ -64,7 +64,7 @@ int main(){
 
     printf("-----------------------------------------");
     printf("\nRetrieve:\n");    
-    int ret = retrieve(L, 6);
+    int ret = retrieve(L, 0);
     printf("%d\n", ret);
 
     makeNULL(&L);
@@ -75,6 +75,10 @@ void initialize(List *L) {
     L->elemPtr = (studtype *)malloc(sizeof(studtype) * LENGTH);
     L->count = 0;
     L->max = LENGTH;
+
+    for(int i = 0; i < L->max; i++){
+        L->elemPtr[i].id = -1;
+    }
 }
 
 void resize(List *L) {
@@ -159,4 +163,3 @@ void makeNULL(List *L) {
     L->count = 0;
     L->max = 0;
 }
-
