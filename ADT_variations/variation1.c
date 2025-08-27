@@ -75,10 +75,24 @@ List initialize(List L){
     return L;
 }
 List insertPos(List L, int data, int position){
-    if(L.elem[position] == -1){
-        L.elem[position] = data;
-        L.count++;
+        if(L.count < MAX){
+            if(L.elem[position] == -1){
+                L.elem[position] = data;
+                L.count++;
+            }else if(L.elem[position] != -1){
+                int i;
+
+                //shift elems to right
+                for(i = L.count; i > position; i--){
+                    L.elem[i] = L.elem[i-1];
+                }
+            
+                //insert to position
+                L.elem[position] = data;
+                L.count++;
+            }
     }
+
     return L;
 }
 List deletePos(List L, int position){
@@ -117,11 +131,10 @@ List insertSorted(List L, int data){
 }
 
 void display(List L){
-
     for(int i = 0; i < MAX; i++){
         printf("%d\t", L.elem[i]);
     }
     printf("\n\n");
-
 }
+
 
