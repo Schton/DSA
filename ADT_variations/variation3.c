@@ -4,157 +4,162 @@
 #define LENGTH 10
 
 typedef struct{
-    int *elemPtr;
+    int id;
+}studtype;
+
+typedef struct{
+    studtype *elemPtr;
     int count;
     int max;
 }List;
 
-List initialize(List);
-List insertPos(List, int, int);
-List deletePos(List, int);
+void initialize(List*);
+void insertPos(List*, int, int);
+void deletePos(List*, int);
 int locate(List, int);
-List  insertSorted(List, int);
+int retrieve(List, int);
+void insertSorted(List*, int);
 void display(List);
-List resize(List);
+void resize(List*);
+void makeNULL(List*);
 
 int main(){
 
     List L;
     int find;
 
-    L = initialize(L);
+    initialize(&L);
 
-    insertPos(L,10,0);
-    insertPos(L,20,1);
-    insertPos(L,30,2);
-    insertPos(L,40,3);
-    insertPos(L,50,6);
-    
+    insertPos(&L,1111,0);
+    insertPos(&L,2222,1);
+    insertPos(&L,5555,2);
+    insertPos(&L,6666,3);
+    insertPos(&L,7777,6);
+
     printf("Insert:\n");
     display(L);
 
-    find = locate(L,20);
-    printf("%d\n\n", find);
-
     printf("-----------------------------------------");
 
-    printf("\nLocate:\n");
-    printf("%d\n\n", find);
 
-    deletePos(L,1);
-
-    printf("-----------------------------------------");
-
+    deletePos(&L,1);
     printf("\nDelete:\n");
     display(L);
 
-    insertSorted(L,25);
-
     printf("-----------------------------------------");
 
+    insertSorted(&L,3333);
     printf("\nInsert Sorted:\n");
     display(L);
 
-    find = locate(L,20);
-
     printf("-----------------------------------------");
-
+    find = locate(L,5555);
     printf("\nLocate:\n");
     printf("%d\n", find);
 
-    find = locate(L,50);
-
     printf("-----------------------------------------");
-
+    find = locate(L,4444);
     printf("\nLocate:\n");
     printf("%d\n", find);
 
-    makeNULL(L);
+    printf("-----------------------------------------");
+    printf("\nRetrieve:\n");    
+    int ret = retrieve(L, 0);
+    printf("%d\n", ret);
 
+    makeNULL(&L);
     return 0;
 }
 
-List initialize(List L){
-    L.elemPtr = (int*)malloc(sizeof(int) * LENGTH);
-    L.count = 0;
-    L.count = LENGTH;
+void initialize(List *L) {
+    L->elemPtr = (studtype *)malloc(sizeof(studtype) * LENGTH);
+    L->count = 0;
+    L->max = LENGTH;
 
-    for(int i = 0; i < L.max; i++){
-        L.elemPtr[i] = -1;
+    for(int i = 0; i < L->max; i++){
+        L->elemPtr[i].id = -1;
     }
-
-    return L;
 }
 
-List insertPos(List L, int data, int position){
-   if(L.count >= L.max) L = resize(L);
+void resize(List *L) {
+    L->max *= 2;
+    L->elemPtr = (studtype *)realloc(L->elemPtr, sizeof(studtype) * L->max);
+}
 
-   if(L.elemPtr[position] == -1){
-        L.elemPtr[position] = data;
-        L.count++;
-    }else if(L.elemPtr[position] != -1){
-        int i;
-        //shift elems to right
-        for(i = L.count; i > position; i--){
-            L.elemPtr[i] = L.elemPtr[i-1];
+void insertPos(List *L, int data, int position) {
+    if (position < 0 || position > L->count) {
+        printf("Invalid position!\n");
+        return;
+    }
+    if (L->count == L->max) {
+        resize(L);
+    }
+
+    for (int i = L->count; i > position; i--) {
+        L->elemPtr[i] = L->elemPtr[i - 1];
+    }
+
+    L->elemPtr[position].id = data;
+    L->count++;
+}
+
+void deletePos(List *L, int position) {
+    if (position < 0 || position >= L->count) {
+        printf("Invalid position!\n");
+        return;
+    }
+
+    for (int i = position; i < L->count - 1; i++) {
+        L->elemPtr[i] = L->elemPtr[i + 1];
+    }
+
+    L->count--;
+}
+
+int locate(List L, int data) {
+    for (int i = 0; i < L.count; i++) {
+        if (L.elemPtr[i].id == data) {
+            return i;
         }
-    
-        //insert to position
-        L.elemPtr[position] = data;
-        L.count++;
     }
-
-    return L;
+    return -1;
 }
-List deletePos(List L, int position){
-    if(position <= (L.count - 1)){
-        if(L.elemPtr[position] != -1){
-            for(int i = position; i < L.count; i++){
-                L.elemPtr[i] =  L.elemPtr[i+1];
-            }
-            L.count--;
-        }
+
+int retrieve(List L, int position) {
+    if (position < 0 || position >= L.max) {
+        printf("Invalid position!\n");
+        return -1;
     }
+    return L.elemPtr[position].id;
 }
-int locate(List L, int data){
-    int i;
-    for(i = 0; i < L.max && L.elemPtr[i] != data; i++){}
 
-    return (i < L.max) ? i : -1;
-}
-List  insertSorted(List L, int data){
-    if(L.count < L.max){
+void insertSorted(List *L, int data) {
+    if(L->count < L->max){
         int position, i;
         //find position
-        for(position = 0; position < L.count && L.elemPtr[position] > data; position++){}
+        for(position = 0; position < L->count && L->elemPtr[position].id > data; position++){}
 
         //shift elems to right
-        for(i = L.count; i > position; i--){
-            L.elemPtr[i+1] = L.elemPtr[i];
+        for(i = L->count; i > position; i--){
+            L->elemPtr[i+1] = L->elemPtr[i];
         }
 
         //insert to position
-        L.elemPtr[position+1] = data;
-        L.count++;
+        L->elemPtr[position+1].id = data;
+        L->count++;
     }
 }
-void display(List L){
-    for(int i = 0; i < L.max; i++){
-        printf("%d\t", L.elemPtr[i]);
+
+void display(List L) {
+    for (int i = 0; i < L.max; i++) {
+        printf("%d ", L.elemPtr[i].id);
     }
-    printf("\n\n");
+    printf("\n");
 }
-List resize(List L){
 
-    L.max *= 2;
-
-    int *newPtr = realloc(L.elemPtr, L.max * sizeof(int));
-
-    L.elemPtr = newPtr;
-
-    for (int i = L.count; i < L.max; i++) {
-        L.elemPtr[i] = -1;
-    }
-
-    return L;
+void makeNULL(List *L) {
+    free(L->elemPtr);
+    L->elemPtr = NULL;
+    L->count = 0;
+    L->max = 0;
 }
