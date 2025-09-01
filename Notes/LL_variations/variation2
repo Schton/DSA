@@ -1,0 +1,116 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node{
+  int data;
+  struct node*next;
+}Node;
+
+typedef struct{
+  Node *head;
+  int count;
+}List;
+
+List* initialize();
+void empty(List*);
+void insertFirst(List*, int );
+void insertLast(List*, int );
+void insertPos(List*, int , int );
+void deleteStart(List*);
+void deleteLast(List*);
+void deletePos(List*, int );
+int retrieve(List*, int );
+int locate(List*, int);
+void display(List*);
+
+int main(){
+
+    List *L = initialize();
+    display(L);
+
+    insertFirst(L,5);
+    insertFirst(L,10);
+    insertFirst(L,15);
+    display(L);
+  
+    insertLast(L,17);
+    display(L);
+    return 0;
+}
+
+List* initialize(){
+
+    // List *L = {NULL,0};
+    List *L = malloc(sizeof(List));
+    L->head = NULL;
+    L->count = 0;
+
+    return (L == NULL) ? NULL : L;
+
+}
+void empty(List *list){
+
+    Node* trav = list->head->next;
+
+    while(trav->next != NULL){
+        free(trav);
+    }
+
+    list->count = 0;
+
+}
+void insertFirst(List *list, int data){
+
+    Node* temp = malloc(sizeof(struct node));
+    temp->data = data;
+    temp->next = list->head;
+
+    list->count++;
+    list->head = temp;
+
+}
+void insertLast(List *list, int data){
+
+    Node *trav = list->head;
+    Node *temp = malloc(sizeof(struct node));
+    temp->data = data;
+    temp->next = NULL;
+
+    if(list->head == NULL) list->head = temp;
+
+    while(trav->next != NULL){
+        trav = trav->next;
+    }
+
+    trav = temp;
+}
+void insertPos(List *list, int data, int index){
+
+}
+void deleteStart(List *list){
+
+}
+void deleteLast(List *list){
+
+}
+void deletePos(List *list, int index){
+
+}
+int retrieve(List *list, int index){
+
+}
+int locate(List *list, int data){
+
+}
+void display(List *list){
+
+    Node *trav = list->head;
+
+    while(trav != NULL){
+        printf("%d\t", trav->data);
+        trav = trav->next;
+    }
+    printf("\n__________________________________________\n");
+
+}
+
