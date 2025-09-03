@@ -1,0 +1,13 @@
+STACK
+
+--VARIATION TYPES--
+
+variation 1:
+top will start at first index      // index 0, an empty stack starts at -1
+first in, last out
+
+variation 2:
+top will start at last index      // index top-1, an empty stack starts at top+1
+last in, first out
+
+QUEUE
