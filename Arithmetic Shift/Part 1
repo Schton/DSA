@@ -1,8 +1,12 @@
 1. How does an arithmetic right shift differ from a logical right shift for a negative number?
-  - Arithmetic shift maintains negativity by preserving the sign bit, which is the most significant bit, by shifting in copies of the sign bit from the left. The logical shift makes it positive by always shifting zeros from the left, regardless of the sign.
+  - Arithmetic shift maintains negativity by preserving the sign bit, which is the most 
+    significant bit, by shifting in copies of the sign bit from the left. The logical shift makes it 
+    positive by always shifting zeros from the left, regardless of the sign.
 
 2. What is the main purpose of using arithmetic shifts in programming?
-  - To perform efficient division/multiplication by powers of 2 while preserving the sign of the number, which is useful for signed integer arithmetic operations.
+  - To perform efficient division/multiplication by powers of 2 while preserving the sign of the 
+    number, which is useful for signed integer arithmetic operations.
 
 3. Why is the left shift operation (<<) the same for both arithmetic and logical shifts?
-  - Because left shifting does not involve the sign bit. When shifting left, the sign bit gets shifted out along with other bits, and zeros are always shifted in from the right.
+  - Because left shifting does not involve the sign bit. When shifting left, the sign bit gets 
+    shifted out along with other bits, and zeros are always shifted in from the right.
