@@ -1,0 +1,13 @@
+1. int x = 10; int result = x << 2; What is the value of result?
+- 40
+
+2. int y = -16; int result = y >> 3; What is the value of result?
+- -2
+
+3. int a = 127; int result = a << 1; What is the value of result? (Hint: Consider the effect of overflow on a signed integer).
+- 254
+
+4. int b = -20; int result = b >> 2; What is the value of result?
+- -5
+5. int c = 100; int d = 3; int result = c >> d; What is the value of result?
+- 12
