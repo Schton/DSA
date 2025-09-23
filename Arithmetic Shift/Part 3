@@ -8,12 +8,8 @@ Answer:
 
 int divideByPowerOfTwo(int num, int power) {
 
-    if (num >= 0) {
-        return num >> power;
-    } else {
-        // Add (2^power - 1) before shifting to get rounding toward zero
-        return (num + (1 << power) - 1) >> power;
-    }
+    if (num >= 0) return num >> power;
+    else return (num + (1 << power) - 1) >> power;
 }
 
 int main() {
