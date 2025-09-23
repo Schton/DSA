@@ -1,8 +1,10 @@
-Explain why x >> 1 is not always equal to x / 2 for a negative number x in C. Provide a specific example to illustrate your point.
+Explain why x >> 1 is not always equal to x / 2 for a negative number x in C. 
+Provide a specific example to illustrate your point.
 
 Answer:
 
-In C, integer division truncates toward zero, while right shift of negative values does sign extension, which effectively rounds toward negative infinity. Thus, for negative odd numbers, results differ:
+In C, integer division truncates toward zero, while right shift of negative values does sign extension, 
+which effectively rounds toward negative infinity. Thus, for negative odd numbers, results differ:
 
 Example:
 x = -7     
@@ -12,6 +14,7 @@ x >> 1 = -4
 a. First, we represent -7 in 8 bits, which is positive (0000 0111)
 b. Second, invert the bits and add 1 so... (0000 0111) -> (1111 1000) -> (1111 1001). So we get  (-7 = 1111 1001)
 c. Third, we shift right and fill with sign bit (>> 1) so...  (1111 1001) -> (1111 1100). So we get -7 >> 1 = -4
-d. Forth, divide by 2 so... (-7 / 2 = -3.5). But because of truncation we get (-3). This is because integer division truncates towards zero.
+d. Forth, divide by 2 so... (-7 / 2 = -3.5). But because of truncation we get (-3). This is because integer division 
+   truncates towards zero.
 e. Fifth, (operation: x / 2 = -3) binary representation of (-3 is 1111 1101). 
 f. Sixth, (operation: x >> 1 = -4) after shifting to the right by 1 we get... (-4 = 1111 1100)
