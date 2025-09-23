@@ -1,6 +1,8 @@
 Write a C program to solve the following problem.
 
-Problem: Write a function divideByPowerOfTwo(int num, int power) that uses the right shift operator to divide num by the power of 2. The function should handle both positive and negative numbers correctly.
+Problem: Write a function divideByPowerOfTwo(int num, int power) that uses the 
+right shift operator to divide num by the power of 2. The function should handle 
+both positive and negative numbers correctly.
 
 Answer:
 
