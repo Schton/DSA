@@ -1,0 +1,25 @@
+Write a C program to solve the following problem.
+
+Problem: Write a function divideByPowerOfTwo(int num, int power) that uses the right shift operator to divide num by the power of 2. The function should handle both positive and negative numbers correctly.
+
+Answer:
+
+#include <stdio.h>
+
+int divideByPowerOfTwo(int num, int power) {
+
+    if (num >= 0) {
+        return num >> power;
+    } else {
+        // Add (2^power - 1) before shifting to get rounding toward zero
+        return (num + (1 << power) - 1) >> power;
+    }
+}
+
+int main() {
+    printf("100 divided by 8 is: %d\n", divideByPowerOfTwo(100, 3));
+    printf("-100 divided by 8 is: %d\n", divideByPowerOfTwo(-100, 3));
+    printf("15 divided by 4 is: %d\n", divideByPowerOfTwo(15, 2));
+    printf("-15 divided by 4 is: %d\n", divideByPowerOfTwo(-15, 2));
+    return 0;
+}
