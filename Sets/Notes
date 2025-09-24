@@ -1,0 +1,12 @@
+union - joined elements between 2 sets, without duplicates
+intersection - common in elements
+difference - difference in elements
+
+isMember
+insert
+assign
+min
+max
+equal
+find
+delete
