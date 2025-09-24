@@ -1,2 +1,20 @@
 Variation 1:
-- using a char holding an int to represent a set.
+- Using a char holding an int to represent a set.
+
+Variation 2:
+- Using bit fields inside a structure
+
+Variation 3:
+- Using an enum datatype
+
+Array Set:
+|3|4|1| | | |
+
+Bit Vector Set:
+|0|1|0|1|1|0|
+
+The BVS will be 1 when index = n in Array Set
+
+------------------------
+Bit Set:
+char = 49; // 0011 0001 --(SET)--> {1,5,6}
