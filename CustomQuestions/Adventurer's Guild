@@ -1,0 +1,30 @@
+Adventurer's Guild
+
+Quest details:
+The guild accepts any valid quests from people of Yggdrasil. The person giving the quest must offer atleast a minimum of the reward, the reward is based on the quest rank, which is 
+assessed by the guild. The guild posts these quests on the quests board. Adventurers can accept quests as long as they meet the requirements. Adventurers are recommended to 
+accept quest equal to their rank. However, they can accept quests 1 rank higher than their own rank, but if they fail they receive a penalty. The adventurer must meet the completion 
+requirement in order to receive the quest's rewards. The guild takes 10% and the adventurer takes 90% of the reward. If more than one adventurer has completed the reward, it is divided equally
+among them. If an adventurer fails a quest, the quest is reposted on the quest board. If a quest has been failed more than 3 times by different adventurers, where the quest rank and adventurer 
+rank is equal, the quest is raised by 1 rank. An adventurer cannot take the same quest again that they fail. An adventurer is to report any information regarding the quest they completed/failed.
+
+There are four classes:
+  Warrior - the muscle brain and frontliner of the party
+  Archer - the eyes and ears and backline of the party
+  Priest - they who heal the party and dispels any lingering magic
+  Mage - the offense, defense, buffer of the party
+
+Skills:
+  Warrior:
+    - Sword slash: deals 40 damage and does physical damage over time(2 dmg per sec)
+    - Shield bash: deals 20 damage and stuns the enemy for 3 seconds
+  Archer:
+    - Piercing shot: deals 30 damage pierces first target and does 80% of the max damage
+    - Tripple shot: shoots out 3 arrows and deals 20 damage
+  Priest:
+    - Light heal: heals 20 health 
+    - Light dispel: dispel lingering magic 
+  Mage:
+    - Water shield: creates a barrier around the casted entity that absorbs 50 damage(magical and physical)
+    - Fire ball: deals 30 damage and does magical damage over time(5 dmg per sec)
+    - Blazing inspiration: increases physical damage dealt by 30%, increases magical damage dealt by 20%(including lingering magic)
