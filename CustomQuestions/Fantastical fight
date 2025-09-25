@@ -1,6 +1,11 @@
 Create a text game.
 
 Requisites:
+All entities have:
+  - health
+  - mana
+  - level
+
 Adventurer classes:
   Warrior - the muscle brain and frontliner of the party
   Archer - the eyes and ears and backline of the party
@@ -21,3 +26,20 @@ Skills:
     - Water shield: creates a barrier around the casted entity that absorbs 50 damage(magical and physical)
     - Fire ball: deals 30 damage and does magical damage over time(5 dmg per sec)
     - Blazing inspiration: increases physical damage dealt by 30%, increases magical damage dealt by 20%(including lingering magic)
+
+Mobs:
+  Goblin warrior:
+    - 100hp
+    - 0mana
+  Goblin shaman:
+    - 60hp
+    - 100mana
+  Hob goblin:
+    - 200hp
+    - 0mana
+  Goblin Elite:
+    - 200hp
+    - 100mana
+  Goblin King:
+    - 500hp
+    - 300mana
